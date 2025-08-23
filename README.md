@@ -14,7 +14,7 @@ This project allows users to quickly generate QR codes for any text or URL input
 ---
 
 ## 🖼️ Demo
-![QR Code Demo](./Screenshot 2025-08-23 165533.png)  
+![App Screenshot](./Screenshot 2025-08-23 165533.png)  
 
 ---
 
