@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Generator</title>
+  <style>
+    /* Background Gradient */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+
+    /* Card */
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+      padding: 40px;
+      width: 400px;
+      text-align: center;
+      backdrop-filter: blur(15px);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Title */
+    h1 {
+      margin-bottom: 15px;
+      font-size: 2em;
+      font-weight: 700;
+      letter-spacing: 1px;
+      background: linear-gradient(to right, #36d1dc, #5b86e5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Input field */
+    input[type="text"] {
+      width: 90%;
+      padding: 12px;
+      margin: 15px 0;
+      border-radius: 8px;
+      border: none;
+      font-size: 1em;
+      text-align: center;
+      outline: none;
+      transition: all 0.3s ease-in-out;
+    }
+
+    input[type="text"]:focus {
+      box-shadow: 0 0 12px rgba(91, 134, 229, 0.8);
+    }
+
+    /* Button */
+    button {
+      background: linear-gradient(45deg, #36d1dc, #5b86e5);
+      border: none;
+      border-radius: 10px;
+      color: white;
+      padding: 12px 25px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(91, 134, 229, 0.6);
+    }
+
+    /* QR Preview */
+    .qr-container {
+      margin-top: 20px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .qr-container img {
+      max-width: 220px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .qr-container img:hover {
+      transform: scale(1.08);
+    }
+
+    /* Download link */
+    a {
+      display: inline-block;
+      margin-top: 15px;
+      text-decoration: none;
+      color: #36d1dc;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #5b86e5;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>QR Code Generator</h1>
+    <form action="/generate" method="POST">
+      <input type="text" name="url" placeholder="Enter your URL..." required>
+      <br>
+      <button type="submit">Generate</button>
+    </form>
+
+    <div class="qr-container">
+      <p id="msg">Your QR will appear here</p>
+      <!-- The server will inject qr.png here dynamically -->
+      <img id="qrImage" src="" style="display:none;">
+      <br>
+      <a id="downloadLink" href="#" download="qr.png" style="display:none;">Download QR</a>
+    </div>
+  </div>
+</body>
+</html>

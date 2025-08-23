@@ -1,0 +1,128 @@
+/* ===== Scientific Modern Theme ===== */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #e4f0f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* ===== Container ===== */
+.container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 3rem;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 1s ease-in-out;
+  width: 400px;
+}
+
+/* ===== Heading ===== */
+.container h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* ===== Input Box ===== */
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  margin-bottom: 1.2rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  transition: 0.3s;
+}
+
+input[type="text"]::placeholder {
+  color: #b3c7d6;
+}
+
+input[type="text"]:focus {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px #00c6ff;
+}
+
+/* ===== Button ===== */
+button {
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #0072ff, #00c6ff);
+  box-shadow: 0 0 15px rgba(0, 198, 255, 0.8);
+}
+
+/* ===== QR Code Box ===== */
+.qr-box {
+  margin-top: 2rem;
+  animation: popIn 0.8s ease-in-out;
+}
+
+.qr-box img {
+  border-radius: 12px;
+  padding: 12px;
+  background: #fff;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #00c6ff, 0 0 10px #0072ff;
+  }
+  to {
+    text-shadow: 0 0 20px #00c6ff, 0 0 40px #0072ff;
+  }
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
